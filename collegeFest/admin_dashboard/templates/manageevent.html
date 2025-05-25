@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "images/assets/favicon.png" %}" type="image/x-icon" />
    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +28,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       crossorigin="anonymous"
     />
-  <link rel="stylesheet" href="manageevent.css">
-  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="{% static "css/manageevent.css" %}">
+  <link rel="stylesheet" href="{% static "css/admin.css" %}" />
 
 </head>
 <body>
@@ -39,7 +40,7 @@
         </div>
         <div class="user-profile">
           <img
-            src="../assets/images.jpg"
+            src="{% static "images/assets/images.jpg" %}"
             alt="User Profile"
             class="avatar"
           />
@@ -50,19 +51,19 @@
         </div>
         <ul class="nav-links">
           <li>
-            <a href="admin.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="/admin/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
           <li class="active">
-            <a href="manageevent.html"><i class="fa-solid fa-calendar-days"></i>Manage Events</a>
+            <a href="/manageevent/"><i class="fa-solid fa-calendar-days"></i>Manage Events</a>
           </li>
           <li>
-            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>View Participants</a>
+            <a href="/myregistration/"><i class="fa-solid fa-address-card"></i>View Participants</a>
           </li>
           <li>
-            <a href="notification.html"><i class="fa-solid fa-bell"></i>Send Notifications</a>
+            <a href="/notification/"><i class="fa-solid fa-bell"></i>Send Notifications</a>
           </li>
           <li>
-            <a href="notification.html"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
+            <a href="/notification/"><i class="fa-solid fa-chart-simple"></i></i>Analytics</a>
           </li>
         </ul>
        <div class="logout-icon">

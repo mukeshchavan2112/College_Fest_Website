@@ -4,14 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Login | Quasars</title>
-<link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="{% static "/assets/favicon.png" %}" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Roboto:wght@500&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="{% static 'assets/favicon.png' %}" type="image/x-icon" />
   <style>
-
-    :root {
+     :root {
   --bg-color: #ffffff;
   --text-color: #0c1830;
   --primary-color: #1b305a;
@@ -140,7 +136,6 @@
         text-decoration: none;
         color: var(--button-color);
     }
-    
   </style>
 </head>
 <body>
@@ -153,7 +148,8 @@
       <button id="adminBtn" onclick="selectAccount('admin')">Admin</button>
     </div>
 
-    <form id="loginForm" action="student_dashboard/studentDash.html">
+    <form id="loginForm" method="POST" action="{% url 'login_user' %}">
+    {% csrf_token %}
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -182,48 +178,26 @@
       </div>
     </form>
 
-    <div class="demo-text">
-      For demo: Student login (student@example.com) or Admin login (admin@example.com)
-    </div>
     <div class="note">
       Don't have Account ?  <a href="signup.html">Register</a>
     </div>
   </div>
-
   <script>
-   
-  let selectedAccount = 'student'; // Default account
+    function selectAccount(type) {
+      const studentBtn = document.getElementById("studentBtn");
+      const adminBtn = document.getElementById("adminBtn");
+      const loginForm = document.getElementById("loginForm");
 
-  function selectAccount(type) {
-    const studentBtn = document.getElementById('studentBtn');
-    const adminBtn = document.getElementById('adminBtn');
-
-    selectedAccount = type;
-
-    if (type === 'student') {
-      studentBtn.classList.add('active');
-      adminBtn.classList.remove('active');
-      document.getElementById('email').value = 'student@example.com';
-    } else {
-      adminBtn.classList.add('active');
-      studentBtn.classList.remove('active');
-      document.getElementById('email').value = 'admin@example.com';
+      if (type === "student") {
+        studentBtn.classList.add("active");
+        adminBtn.classList.remove("active");
+        loginForm.action = "{% url 'login_user' %}";
+      } else {
+        adminBtn.classList.add("active");
+        studentBtn.classList.remove("active");
+        loginForm.action = "{% url 'admin_login' %}";
+      }
     }
-  }
-
-  document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Stop default submit for now
-
-    // Redirect based on account type
-    if (selectedAccount === 'student') {
-      this.action = 'student_dashboard/studentDash.html';
-    } else {
-      this.action = 'admin_dashboard/admin.html';
-    }
-
-    this.submit(); // Now submit with updated action
-  });
-</script>
   </script>
 </body>
 </html>

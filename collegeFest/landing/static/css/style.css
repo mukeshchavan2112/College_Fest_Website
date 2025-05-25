@@ -633,11 +633,6 @@ span {
   flex: 1 1 250px;
 }
 
-.footer-contact-dev {
-  text-align: end;
-  flex: 1 1 250px;
-}
-
 .footer-txt {
   color: var(--primary-color);
   font-weight: 500;

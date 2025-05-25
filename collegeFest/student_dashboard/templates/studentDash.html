@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,12 +9,12 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="{% static "css/student.css" %}">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "images/assets/favicon.png" %}" type="image/x-icon" />
    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +39,7 @@
         </div>
         <div class="user-profile">
           <img
-            src="../assets/images.jpg"
+            src="{% static "images/assets/images.jpg" %}"
             alt="User Profile"
             class="avatar"
           />
@@ -49,16 +50,16 @@
         </div>
         <ul class="nav-links">
           <li class="active">
-            <a href="studentDash.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="/"><i class="fa-solid fa-house"></i>Home</a>
           </li>
           <li>
-            <a href="eventdashboard.html"><i class="fa-solid fa-calendar-days"></i>Events</a>
+            <a href="/eventdashboard/"><i class="fa-solid fa-calendar-days"></i>Events</a>
           </li>
           <li>
-            <a href="myregistration.html"><i class="fa-solid fa-address-card"></i>My registrations</a>
+            <a href="/myregistration/"><i class="fa-solid fa-address-card"></i>My registrations</a>
           </li>
           <li>
-            <a href="notification.html"><i class="fa-solid fa-bell"></i>Notifications</a>
+            <a href="/notification/"><i class="fa-solid fa-bell"></i>Notifications</a>
           </li>
         </ul>
        <div class="logout-icon">
@@ -208,6 +209,6 @@
         </div>
       </main>
     </div>
-    <script src="student.js"></script>
+    <script src="{% static "js/student.js" %}"></script>
   </body>
 </html>
