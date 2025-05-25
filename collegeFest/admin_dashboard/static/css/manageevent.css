@@ -1,0 +1,68 @@
+
+.content-wrapper {
+  margin: 2rem;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-actions input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 214, 252, 0.567);
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.buttons button {
+  padding: 0.6rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+
+.create-btn {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
