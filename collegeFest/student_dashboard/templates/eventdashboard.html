@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,13 +9,13 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="student.css">
-    <link rel="stylesheet" href="../schedule.css">
+    <link rel="stylesheet" href="{% static "css/student.css" %}">
+    <link rel="stylesheet" href="{% static "css/schedule.css" %}">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "images/assets/favicon.png" %}" type="image/x-icon" />
    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,7 +40,7 @@
         </div>
         <div class="user-profile">
           <img
-            src="../assets/images.jpg"
+            src="{% static "images/assets/images.jpg" %}"
             alt="User Profile"
             class="avatar"
           />
@@ -88,7 +89,7 @@
 
        <div class="schedule-grid">
         <div class="event-cards">
-          <img src="../scheduleImages/event1.jpg" />
+          <img src="images/scheduleImages/event1.jpg" />
           <h3>Short Film</h3>
           <p>Date: March 20, 2025</p>
           <p>Time: 4:00 PM</p>
