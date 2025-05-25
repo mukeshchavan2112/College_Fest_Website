@@ -31,7 +31,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return redirect('studentDash')  # this should be a named URL
+            return redirect('student_dashboard:studentDash')  # this should be a named URL
         else:
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
@@ -47,7 +47,7 @@ def signup_user(request):
 
         user = User.objects.create_user(username=email, password=password, first_name=name)
         login(request, user)
-        return redirect('studentDash')  # replace with your actual dashboard URL name
+        return redirect('student_dashboard:studentDash')  # replace with your actual dashboard URL name
 
     return render(request, 'signup.html')
 
@@ -60,7 +60,7 @@ def admin_login_view(request):
         if user is not None:
             if user.is_staff or user.is_superuser:
                 login(request, user)
-                return redirect('admin_dash')
+                return redirect('admin_dashboard:admin_dash')
         else:
             messages.error(request, 'Invalid admin credentials or not an admin user.')
     return render(request, 'login.html')

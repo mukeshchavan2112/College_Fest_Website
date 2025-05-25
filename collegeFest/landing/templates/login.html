@@ -150,6 +150,7 @@
 
     <form id="loginForm" method="POST" action="{% url 'login_user' %}">
     {% csrf_token %}
+    <input type="hidden" name="account_type" id="accountType" value="student" />
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -183,21 +184,25 @@
     </div>
   </div>
   <script>
-    function selectAccount(type) {
-      const studentBtn = document.getElementById("studentBtn");
-      const adminBtn = document.getElementById("adminBtn");
-      const loginForm = document.getElementById("loginForm");
+  function selectAccount(type) {
+    const studentBtn = document.getElementById('studentBtn');
+    const adminBtn = document.getElementById('adminBtn');
+    const accountType = document.getElementById('accountType');
 
-      if (type === "student") {
-        studentBtn.classList.add("active");
-        adminBtn.classList.remove("active");
-        loginForm.action = "{% url 'login_user' %}";
-      } else {
-        adminBtn.classList.add("active");
-        studentBtn.classList.remove("active");
-        loginForm.action = "{% url 'admin_login' %}";
-      }
+    if (type === 'student') {
+      studentBtn.classList.add('active');
+      adminBtn.classList.remove('active');
+      accountType.value = 'student';
+      document.getElementById('loginForm').action = "{% url 'login_user' %}";
+    } else {
+      adminBtn.classList.add('active');
+      studentBtn.classList.remove('active');
+      accountType.value = 'admin';
+      document.getElementById('loginForm').action = "{% url 'admin_login' %}";
     }
-  </script>
+  }
+</script>
+
+
 </body>
 </html>
